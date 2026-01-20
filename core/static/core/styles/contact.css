@@ -1,0 +1,216 @@
+:root {
+    --background-svg-color: #30373fff;
+    --github-color: #24292F;
+    --github-border: #444D56;
+    --linkedin-color: #0A66C2;
+    --instagram-gradient: radial-gradient(circle at 30% 107%,
+            #fdf497 0%,
+            #fdf497 5%,
+            #fd5949 45%,
+            #d6249f 60%,
+            #285AEB 90%);
+    --instagram-color: #E1306C;
+    --facebook-color: #1877F2;
+    --whatsapp-color: #25D366;
+}
+
+#contact {
+    width: clamp(40dvw, 800px, 90%);
+    margin: 0 auto 80px auto;
+}
+
+#contact a {
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    background-color: var(--panel);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    width: 100%;
+    min-height: 90px;
+    margin-bottom: 10px;
+    padding: 15px;
+    transition: all 0.2s ease-in-out;
+}
+
+#contact a > svg {
+    position: absolute;
+    right: 5%;
+    bottom: -20px;
+    width: 80px;
+    height: 80px;
+    color: var(--background-svg-color);
+    transition: all 0.2s ease-in-out;
+}
+
+#contact .icon_container {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    transition: color 0.2s ease-in-out;
+}
+
+#contact .icon_container svg {
+    color: var(--text-high);
+}
+
+#contact .social_link {
+    color: var(--text-high);
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    line-height: 1;
+}
+
+#contact .social_link span {
+    color: var(--text-low);
+    font-size: 0.9rem;
+    margin-top: 5px;
+    line-height: 1.1;
+}
+
+#contact .arrow_container svg {
+    color: var(--text-low);
+    height: 20px;
+    width: 20px;
+}
+
+#contact_mail > svg {
+    bottom: -25px;
+}
+
+#contact_personal_github > svg,
+#contact_university_github > svg,
+#contact_facebook > svg {
+    bottom: -15px;
+}
+#contact_linkedin > svg,
+#contact_instagram > svg,
+#contact_whatsapp > svg {
+    bottom: -20px;
+}
+
+#contact a:hover {
+    transform: translateY(-2px);
+}
+
+#contact a:hover > svg {
+    transform: translateY(-5px);
+}
+
+#contact a:hover .arrow_container svg {
+    color: var(--text-high);
+}
+
+#contact a:active {
+    transform: translateY(-2px) scale(0.97);
+}
+
+#contact_mail:hover {
+    border-color: var(--accent-cool);
+}
+
+#contact_mail:hover > svg {
+    stroke: var(--accent-cool);
+    stroke-width: 0.8;
+}
+
+#contact_mail:hover .social_link {
+    color: var(--accent-cool);
+}
+
+#contact_mail .icon_container {
+    background-color: var(--accent-cool);
+}
+
+#contact_personal_github:hover,
+#contact_university_github:hover {
+    border-color: var(--github-border);
+}
+
+#contact_personal_github:hover > svg,
+#contact_university_github:hover > svg {
+    stroke: var(--github-border);
+    stroke-width: 0.8;
+}
+
+#contact_personal_github .icon_container,
+#contact_university_github .icon_container {
+    background-color: var(--github-color);
+    border: 1px solid var(--github-border);
+}
+
+#contact_linkedin:hover {
+    border-color: var(--linkedin-color);
+}
+
+#contact_linkedin:hover > svg {
+    stroke: var(--linkedin-color);
+    stroke-width: 0.8;
+}
+
+#contact_linkedin:hover .social_link {
+    color: var(--linkedin-color);
+}
+
+#contact_linkedin .icon_container {
+    background-color: var(--linkedin-color);
+}
+
+#contact_instagram:hover {
+    border-color: var(--instagram-color);
+}
+
+#contact_instagram:hover > svg {
+    stroke: var(--instagram-color);
+    stroke-width: 0.8;
+}
+
+#contact_instagram:hover .social_link {
+    color: var(--instagram-color);
+}
+
+#contact_instagram .icon_container {
+    background: var(--instagram-gradient);
+}
+
+#contact_facebook:hover {
+    border-color: var(--facebook-color);
+}
+
+#contact_facebook:hover > svg {
+    stroke: var(--facebook-color);
+    stroke-width: 0.8;
+}
+
+#contact_facebook:hover .social_link {
+    color: var(--facebook-color);
+}
+
+#contact_facebook .icon_container {
+    background-color: var(--facebook-color);
+}
+
+#contact_whatsapp:hover {
+    border-color: var(--whatsapp-color);
+}
+
+#contact_whatsapp:hover > svg {
+    stroke: var(--whatsapp-color);
+    stroke-width: 0.8;
+}
+
+#contact_whatsapp:hover .social_link {
+    color: var(--whatsapp-color);
+}
+
+#contact_whatsapp .icon_container {
+    background-color: var(--whatsapp-color);
+}

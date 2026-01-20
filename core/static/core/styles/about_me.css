@@ -1,0 +1,25 @@
+#aboutme {
+    width: clamp(40dvw, 800px, 90%);
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--panel);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+#aboutme h2{
+    text-align: center;
+}
+
+#aboutme p {
+    color: var(--text-medium);
+}
+
+#aboutme p:last-child {
+    font-family: "oldstandardtt-italic", serif;
+    font-size: 1.3rem;
+    text-align: center;
+    text-decoration: underline;
+    color: var(--text-high);
+}
