@@ -1,0 +1,261 @@
+@media (max-width: 1199px) {
+    #main_title {
+        width: fit-content;
+    }
+
+    .project {
+        flex: 0 0 calc(50% - 10px);
+    }
+
+    @media (max-width: 991px) {
+        .feature_container {
+            grid-template-columns: 1fr;
+        }
+
+        @media (max-width: 950px) {
+            #main {
+                flex-direction: column;
+            }
+
+            #main_title,
+            #main_content {
+                width: 100%;
+            }
+
+            #main_description {
+                width: min(650px, 100%);
+            }
+
+            @media (max-width: 799px) {
+                #projects_header .all_projects_btn {
+                    display: none;
+                }
+
+                #card_container .all_projects_btn {
+                    display: flex;
+                }
+
+                .footer_container {
+                    flex-direction: column;
+                    gap: 1rem;
+                    padding: 2rem 1rem;
+                }
+
+                .footer_brand {
+                    line-height: 0.5;
+                    margin-bottom: 5px;
+                }
+
+                .footer_brand .footer_tag {
+                    color: var(--text-low);
+                }
+
+                .footer_nav {
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    gap: 0.5rem;
+                }
+
+                .footer_nav a:not(:last-child)::after {
+                    content: "•";
+                    margin-left: 0.5rem;
+                }
+
+                @media (max-width: 767px) {
+                    #content_divider {
+                        grid-template-columns: 1fr;
+                    }
+
+                    .project {
+                        flex: 0 0 100%;
+                    }
+
+                    /* Pantallas pequeñas (móviles, <600px) */
+                    @media (max-width: 600px) {
+                        #main_content ul {
+                            justify-content: space-between;
+                        }
+
+                        #about_me {
+                            width: 90%;
+                            margin: 0 5%;
+                        }
+
+                        #about_me h2 {
+                            text-align: left;
+                        }
+
+                        @media (max-width: 575px) {
+                            #other_projects {
+                                max-width: calc(100dvw - 1.5rem);
+                            }
+
+                            /* Pantallas pequeñas (<563px) */
+                            @media (max-width: 563px) {
+                                #navbar {
+                                    height: auto;
+                                    border: none;
+                                    grid-template-columns: 1fr;
+                                    grid-template-rows: auto 1fr;
+                                    padding: 0;
+                                    gap: 0;
+                                }
+
+                                #open_navbar_button_container {
+                                    display: grid;
+                                }
+
+                                #close_navbar_button {
+                                    display: flex;
+                                    justify-content: right;
+                                    align-items: center;
+                                }
+
+                                #navbar .brand_container {
+                                    width: 100%;
+                                    height: 60px;
+                                    display: grid;
+                                    grid-template-columns: auto 1fr;
+                                    padding: 0 20px;
+                                }
+
+                                .brand_link {
+                                    font-size: 1.5rem;
+                                }
+
+                                .brand_link svg {
+                                    width: 2rem;
+                                    height: 2rem;
+                                }
+
+                                #navbar .brand_link {
+                                    padding: 0;
+                                }
+
+                                #navbar_links {
+                                    display: flex;
+                                    flex-direction: column;
+                                    gap: 0;
+                                }
+
+                                #navbar_links li {
+                                    border-top: 1px solid var(--border);
+                                    font-size: 1.5rem;
+                                }
+
+                                #navbar_links li:last-child {
+                                    border-bottom: 1px solid var(--accent-cool);
+                                }
+
+                                header a {
+                                    padding: 0 0 0 30px;
+                                    width: 100%;
+                                    height: 100%;
+                                    align-items: center;
+                                }
+
+                                #trigger {
+                                    width: 100%;
+                                }
+
+                                #trigger div {
+                                    display: grid;
+                                    grid-template-columns: auto 1fr;
+                                }
+
+                                #trigger div a {
+                                    width: fit-content;
+                                }
+
+                                #button_trigger {
+                                    /* Contenedor principal */
+                                    width: 100%;
+                                    height: 100%;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: left;
+                                }
+
+                                #projects_li #trigger #project_list {
+                                    /* Lista */
+                                    margin: 0;
+                                    width: 100%;
+                                    border-radius: 0;
+                                    border-bottom: 1px solid var(--accent-cool);
+                                }
+
+                                #projects_li #trigger #project_list li {
+                                    /* Elementos de la lista */
+                                    width: 100%;
+                                    padding: 0;
+                                }
+
+                                #projects_li #trigger #project_list li a {
+                                    /* Enlaces de la lista */
+                                    color: var(--text-high);
+                                    width: 100%;
+                                    padding: 0 60px;
+                                }
+
+                                #projects_li #trigger #project_list li:last-of-type {
+                                    /* Ultimo elemento de la lista */
+                                    border-radius: 0;
+                                }
+
+                                #projects_li #trigger #project_list li:active {
+                                    /* Hover a los elementos de la lista */
+                                    border-left: 10px solid var(--accent-soft);
+                                }
+
+                                #projects_li #trigger.visible #project_list {
+                                    /* Hover al contenedor principal y afecta a la lista */
+                                    transform: scaleY(1);
+                                    transition: 350ms transform 100ms;
+                                }
+
+                                #projects_li #trigger.visible #project_list a {
+                                    /* Hover al contenedor principal y afecta a los enlaces */
+                                    opacity: 1;
+                                    transition: 350ms opacity 200ms;
+                                }
+
+                                #navbar.visible~#overlay {
+                                    display: block;
+                                }
+
+                                /* Pantallas muy pequeñas (<430px) */
+                                @media (max-width: 430px) {
+                                    #main h1 {
+                                        font-size: 3.5rem;
+                                    }
+
+                                    #main h2 {
+                                        font-size: 1.8rem;
+                                    }
+
+                                    #info_container {
+                                        grid-template-columns: 1fr;
+                                    }
+
+                                    #main_content ul {
+                                        gap: 12px;
+                                    }
+
+                                    #main_content li a {
+                                        font-size: 0.85rem;
+                                        gap: 4px;
+                                    }
+
+                                    #main_content svg {
+                                        width: 1.5rem;
+                                        height: 1.5rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

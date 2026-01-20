@@ -1,0 +1,73 @@
+footer {
+    background: linear-gradient(180deg, var(--background-900), var(--background-800));
+    border-top: 1px solid var(--border);
+    color: var(--text-medium);
+}
+
+.footer_container {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 3rem 1rem;
+}
+
+.footer_brand {
+    flex: 1;
+}
+
+.footer_brand .brand_link {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    color: var(--text-high);
+    text-decoration: none;
+}
+
+.footer_brand .footer_tag {
+    margin: .5rem 0 0 0;
+    color: var(--text-medium);
+    font-size: .95rem;
+}
+
+.footer_nav {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.footer_nav a {
+    color: var(--text-medium);
+    text-decoration: none;
+    transition: color .15s ease;
+}
+
+.footer_nav a:hover {
+    color: var(--accent-soft);
+}
+
+.footer_social {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.footer_social .social_link {
+    display: inline-flex;
+    gap: .5rem;
+    align-items: center;
+    color: var(--text-medium);
+    text-decoration: none;
+}
+
+.footer_social .social_link svg {
+    color: var(--accent-soft);
+}
+
+.footer_bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+    padding: 0.8rem 1rem 2rem 1rem;
+    text-align: center;
+    color: var(--text-low);
+    font-size: .9rem;
+}

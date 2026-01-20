@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Uziel Flores | Desarrollador Web{% endblock title %}</title>
+    <meta name="description" content="Soy un desarrollador web junior, estudiante de ingeniería de software y un apasionado del mundo de la programación. Aquí podrás encontrar todos los proyectos que he creado, así como mis habilidades y medios de contacto.">
+    <meta name="author" content="Uziel Omar Flores Torres">
+
+    <meta property="og:title" content="Uziel Flores | Desarrollador Web">
+    <meta property="og:description" content="Portfolio profesional de Uziel Flores. Desarrollo web frontend y backend, proyectos, habilidades y contacto.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ request.scheme }}://{{ request.get_host }}">
+    <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'core/images/og/por-mientras.jpg' %}"> {#cambiar luego por la verdadera#}
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:alt" content="Portfolio profesional de Uziel Flores">
+    <meta property="og:site_name" content="Uziel Flores | Desarrollador Web">
+    <meta property="og:locale" content="es_MX">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Uziel Flores | Desarrollador Web">
+    <meta name="twitter:description" content="Portfolio profesional de Uziel Flores. Desarrollo web frontend y backend, proyectos, habilidades y contacto.">
+    <meta name="twitter:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'core/images/og/por-mientras.jpg' %}"> {#cambiar luego por la verdadera#}
+    <meta name="twitter:image:alt" content="Portfolio profesional de Uziel Flores">
+    <meta name="twitter:site" content="@usuario"> {#cuenta de twitter#}
+    <meta name="twitter:creator" content="@usuario">
+
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    
+    {# Bootstrap CSS #}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'core/styles/variables.css' %}">
+    <link rel="stylesheet" href="{% static 'core/styles/layout.css' %}">
+    <link rel="stylesheet" href="{% static 'core/styles/header.css' %}">
+    {% block extra_style %}{% endblock extra_style %}
+    <link rel="stylesheet" href="{% static 'core/styles/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'core/styles/responsive.css' %}">
+</head>
+
+<body>
+    <header>
+        {% include 'elements/header.html' %}
+    </header>
+
+    {% block content %}{% endblock content %}
+
+    <footer>
+        {% include 'elements/footer.html' %}
+    </footer>
+
+    {# Bootstrap JS #}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="{% static 'core/js/header.js' %}" defer></script>
+    {% block extra_script %}{% endblock extra_script %}
+</body>
+
+</html>

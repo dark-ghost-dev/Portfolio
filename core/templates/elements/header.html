@@ -1,0 +1,60 @@
+{% load static %}
+<div id="open_navbar_button_container">
+    <div>
+        <a href="{% url 'home' %}#home" class="brand_link">
+            {% include "icons/brand.svg" %}
+            Uziel.dev
+        </a>
+    </div>
+    <button type="button" id="open_navbar_button" aria-label="open navbar" aria-expanded="false" aria-controls="navbar">
+        {% include 'icons/menu.svg' %}
+    </button>
+</div>
+
+<nav id="navbar">
+    <div class="brand_container">
+        <a href="{% url 'home' %}#home" class="brand_link">
+            {% include "icons/brand.svg" %}
+            Uziel.dev
+        </a>
+        <button type="button" id="close_navbar_button" aria-label="close navbar">
+            {% include 'icons/x.svg' %}
+        </button>
+    </div>
+    <ul id="navbar_links">
+        <li>
+            <a href="{% url 'home' %}#home">Inicio</a>
+        </li>
+        <li>
+            <a href="{% url 'home' %}#aboutme">Sobre mí</a>
+        </li>
+        <li id="projects_li">
+            <div id="trigger">
+                <div>
+                    <a href="{% url 'home' %}#projects">Proyectos</a>
+                    <button type="button" id="button_trigger">
+                        <span>
+                            {% include 'icons/chevron-down.svg' %}
+                        </span>
+                    </button>
+                </div>
+                <ul id="project_list">
+                    <li><a href="#1">ProyectoTPOO</a></li>
+                    <li><a href="#2">Chalino</a></li>
+                    <li><a href="#3">Spokane</a></li>
+                    <li><a href="#4">Portland</a></li>
+                    <li><a href="#5">Bend</a></li>
+                </ul>
+            </div>
+        </li>
+
+        <li>
+            <a href="{% url 'home' %}#skills">Habilidades</a>
+        </li>
+        <li>
+            <a href="{% url 'home' %}#contact">Contacto</a>
+        </li>
+    </ul>
+</nav>
+
+<div id="overlay" aria-hidden="true"></div>

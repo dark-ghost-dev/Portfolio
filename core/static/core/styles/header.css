@@ -1,0 +1,189 @@
+/* NavBar */
+#navbar, #open_navbar_button_container {
+    position: fixed;
+    top: -60px;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    background-color: rgba(var(--background-700), 0.2);
+    backdrop-filter: blur(5px);
+    border-bottom: 1px solid var(--accent-cool);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transform: translateY(-100%);
+    transition: transform 0.4s ease, top 0.4s ease;
+    z-index: 2;
+}
+
+#navbar {
+    padding: 0 20px;
+    gap: 30px;
+    align-items: center;
+}
+
+#open_navbar_button_container {
+    padding: 0 20px;
+}
+
+#open_navbar_button, #close_navbar_button, #button_trigger {
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+#open_navbar_button_container, #close_navbar_button {
+    display: none;
+}
+
+#navbar.visible, #open_navbar_button_container.visible {
+    transform: translateY(0);
+    top: 0;
+}
+
+/* Link izquierdo */
+.brand_link {
+    align-items: center;
+    gap: 10px;
+    width: fit-content;    
+}
+
+#open_navbar_button_container .brand_link {
+    padding: 0;
+}
+
+/* Lista de links */
+#navbar_links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+#navbar_links li {
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+/* Links */
+header a {
+    display: flex;
+    color: var(--accent-soft);
+    text-decoration: none;
+    font-family: "staatliches", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    transition: transform 0.2s ease;
+}
+
+header .brand_link:hover, header .brand_link:active, header #navbar_links a:hover, header #navbar_links a:active {
+    color: var(--text-high);
+}
+
+header .brand_link:active, header #navbar_links a:active {
+    transform: scale(0.9);
+}
+
+header .brand_link:hover svg, header .brand_link:active svg, header #navbar_links a:hover svg, header #navbar_links a:active svg {
+    color: var(--text-high);
+}
+
+/* Dropdown de proyectos */
+#projects_li #trigger {
+    /* Contenedor principal */
+    position: relative;
+}
+
+#projects_li #trigger div {
+    /* Contenedor del link principal */
+    display: flex;
+    align-items: center;
+    height: 60px;
+    gap: 5px;
+    z-index: 2;
+    cursor: pointer;
+    transition: color 0.7s ease;
+}
+
+#button_trigger svg {
+    /* SVG del link principal */
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+#projects_li #trigger #project_list {
+    /* Lista */
+    position: absolute;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-600);
+    border-radius: 0 0 15px 15px;
+    overflow: hidden;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: 350ms transform 350ms;
+}
+
+#projects_li #trigger #project_list li {
+    /* Elementos de la lista */
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 44px;
+    padding: 0 20px;
+    z-index: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: flex-start;
+    border-left: 0px solid var(--border);
+    transition: 200ms border-left 0ms;
+}
+
+#projects_li #trigger #project_list li a {
+    /* Enlaces de la lista */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    opacity: 0;
+    transition: 350ms opacity 0ms;
+}
+
+#projects_li #trigger #project_list li:last-of-type {
+    /* Ultimo elemento de la lista */
+    border-radius: 0 0 22px 22px;
+}
+
+@media (min-width: 564px) {
+    #projects_li #trigger #project_list li:hover {
+        /* Hover a los elementos de la lista */
+        border-left: 10px solid var(--accent-soft);
+    }
+
+    #projects_li #trigger:hover #project_list {
+        /* Hover al contenedor principal y afecta a la lista */
+        transform: scaleY(1);
+        transition: 350ms transform 100ms;
+    }
+
+    #projects_li #trigger:hover #project_list a {
+        /* Hover al contenedor principal y afecta a los enlaces */
+        opacity: 1;
+        transition: 350ms opacity 200ms;
+    }    
+}
+
+#overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    display: none;
+}
