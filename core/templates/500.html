@@ -1,0 +1,74 @@
+{% extends 'base_error.html' %}
+
+{% load static %}
+
+{% block title %}Error 500 | {{ request.get_host }}{% endblock title %}
+
+{% block extra_style %}{% endblock extra_style %}
+
+{% block extra_script %}
+<script src="{% static 'error/js/500.js' %}" defer></script>
+{% endblock extra_script %}
+
+{% block content %}
+<div id="main-container">
+    <main class="container">
+        <div class="divider">
+            <section id="main-error">
+                <h1>500</h1>
+                <h3>Internal Server Error</h3>
+                <p>Ups, casi se nos cae el server con esa petición. Intenta recargar la página.
+                    <br>
+                    Si sigue fallando contáctame y me pongo a trabajar lo más rápido posible.
+                </p>
+            </section>
+            <section class="mac-window">
+                <div class="mac-titlebar">
+                    <div class="mac-buttons">
+                        <span class="mac-btn close"></span>
+                        <span class="mac-btn minimize"></span>
+                        <span class="mac-btn maximize"></span>
+                    </div>
+                    <div class="mac-title">Terminal</div>
+                </div>
+
+                <div class="code-block">
+                    <pre>
+<code><span class="comment">// InternalServerError</span>
+
+<span class="method">GET</span> <span class="path">/api/policies</span> <span class="protocol">HTTP/1.1</span>
+
+Traceback (most recent call last):
+  File "<span class="file">/app/services/policy_service.py</span>", line <span class="line">87</span>, in create_policy
+    premium = calculate_premium(data)
+  File "<span class="file">/app/utils/calculations.py</span>", line <span class="line">23</span>, in calculate_premium
+    return base / factor
+<span class="error">ZeroDivisionError</span>: division by zero
+
+<span class="error">StatusCode: 500 Internal Server Error</span>
+Timestamp: <span id="current-time" class="number">-</span>
+RequestID: <span id="id" class="number">-</span>
+</code></pre>
+                </div>
+            </section>
+        </div>
+        <section class="buttons">
+            <h2>Intenta con alguna de estas acciones</h2>
+            <div>
+                <button type="button" id="reload-btn" class="button primary-btn">
+                    {% include "icons/reload.svg" %}
+                    Recargar página
+                </button>
+                <a href="{% url 'home' %}#home" id="home-btn" class="button primary-btn">
+                    {% include "icons/home.svg" %}
+                    Volver al inicio
+                </a>
+                <a href="" id="email-btn" class="button secondary-btn">
+                    {% include "icons/mail.svg" %}
+                    Contactar al correo
+                </a>
+            </div>
+        </section>
+    </main>
+</div>
+{% endblock content %}
