@@ -1,0 +1,68 @@
+{% extends 'base_error.html' %}
+
+{% load static %}
+
+{% block title %}Error 404 | {{ request.get_host }}{% endblock title %}
+
+{% block extra_style %}{% endblock extra_style %}
+
+{% block extra_script %}
+<script src="{% static 'core/js/header_scroll.js' %}" defer></script>
+{% endblock extra_script %}
+
+{% block content %}
+<div id="main-container">
+    <main class="container">
+        <div class="divider">
+            <section id="main-error">
+                <h1>404</h1>
+                <h3>Page Not Found</h3>
+                <p>Vaya, parece que debería haber algo aquí.
+                    <br>
+                    Sigue buscando, seguro hallarás algo que si exista dentro de mi web.
+                </p>
+            </section>
+            <section class="mac-window">
+                <div class="mac-titlebar">
+                    <div class="mac-buttons">
+                        <span class="mac-btn close"></span>
+                        <span class="mac-btn minimize"></span>
+                        <span class="mac-btn maximize"></span>
+                    </div>
+                    <div class="mac-title">Terminal</div>
+                </div>
+
+                <div class="code-block">
+                    <pre>
+<code><span class="comment">// RequestError: ResourceNotFound</span>
+
+<span class="method">GET</span> <span class="path">/</span> <span class="protocol">HTTP/1.1</span>
+Host: uziel.dev
+
+Traceback (most recent call last):
+    File "<span class="file">/app/router.py</span>", line <span class="line">42</span>, in resolve
+        match = resolve_path(request.path)
+    File "<span class="file">/app/router.py</span>", line <span class="line">18</span>, in resolve_path
+        raise <span class="error">RouteNotFound</span>(path)
+
+<span class="error">RouteNotFound</span>: No route matches "<span class="path">/</span>"
+<span class="error">StatusCode: 404 Not Found</span>
+Timestamp: <span id="current-time" class="number">-</span>
+</code></pre>
+                </div>
+            </section>
+        </div>
+
+        <section id="other-links">
+            <h2>Prueba con estos enlaces</h2>
+            <nav class="link-nav">
+                <a href="{% url 'home' %}#home">Inicio</a>
+                <a href="{% url 'home' %}#aboutme">Sobre mí</a>
+                <a href="{% url 'home' %}#projects">Proyectos</a>
+                <a href="{% url 'home' %}#skills">Habilidades</a>
+                <a href="{% url 'home' %}#contact">Contacto</a>
+            </nav>
+        </section>
+    </main>
+</div>
+{% endblock content %}
