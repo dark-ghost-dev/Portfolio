@@ -3,11 +3,11 @@ function updateCardExtras() {
     const cards = document.querySelectorAll('#card_container .card');
     const width = window.innerWidth;
 
-    // >=1572px  -> primeras 4 no tienen .extra
-    // 991-1571  -> primeras 3 no tienen .extra
-    // 800-991   -> primeras 4 no tienen .extra
-    // <=799     -> primeras 3 no tienen .extra
-    const visibleCount = (width >= 1572 || (width >= 800 && width <= 991)) ? 4 : 3;
+    // >=1400px  -> primeras 4 no tienen .extra
+    // 992-1399  -> primeras 3 no tienen .extra
+    // 768-991   -> primeras 4 no tienen .extra
+    // <=767     -> primeras 3 no tienen .extra
+    const visibleCount = (width >= 1400 || (width >= 768 && width <= 991)) ? 4 : 3;
 
     cards.forEach((card, idx) => {
         if (idx < visibleCount) {

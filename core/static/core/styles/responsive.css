@@ -27,14 +27,6 @@
             }
 
             @media (max-width: 799px) {
-                #projects_header .all_projects_btn {
-                    display: none;
-                }
-
-                #card_container .all_projects_btn {
-                    display: flex;
-                }
-
                 .footer_container {
                     flex-direction: column;
                     gap: 1rem;
@@ -62,6 +54,14 @@
                 }
 
                 @media (max-width: 767px) {
+                    #projects_header .all_projects_btn {
+                        display: none;
+                    }
+
+                    #card_container .all_projects_btn {
+                        display: flex;
+                    }
+
                     #content_divider {
                         grid-template-columns: 1fr;
                     }
