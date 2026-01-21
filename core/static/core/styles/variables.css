@@ -59,6 +59,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: "oldstandardtt";
+    src: url("../fonts/OldStandardTT-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* Parrafos */
 @font-face {
     font-family: "poppins-medium";
