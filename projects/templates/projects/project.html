@@ -1,0 +1,486 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %}Uziel Flores | Desarrollador Web{% endblock title %}
+
+{% block extra_style %}
+<link rel="stylesheet" href="{% static 'core/styles/projects.css' %}">
+<link rel="stylesheet" href="{% static 'projects/styles/project.css' %}">
+{% endblock extra_style %}
+
+{% block extra_script %}
+<script src="{% static 'core/js/header_static.js' %}" defer></script>
+<script src="{% static 'projects/js/project_images.js' %}" defer></script>
+<script src="{% static 'projects/js/share_buttons.js' %}" defer></script>
+{% endblock extra_script %}
+
+{% block content %}
+<main class="container">
+    <a href="index.html#projects" id="go_back">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-left">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M5 12l14 0" />
+            <path d="M5 12l6 6" />
+            <path d="M5 12l6 -6" />
+        </svg>
+        volver a proyectos
+    </a>
+
+    {# static content #}
+    <h1>Nexus Store</h1>
+    <p class="title_footer">Sistema POS • Finalizado en Mayo del 2025</p>
+    <div class="links_container">
+        <a href="#about_me" class="link primary_link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-rocket">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path
+                    d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3" />
+                <path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3" />
+                <path d="M14 9a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+            </svg>
+            Demo en vivo
+        </a>
+        <a href="#projects" class="link secondary_link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-brand-github">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path
+                    d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+            </svg>
+            Repositorio
+        </a>
+    </div>
+
+    <div id="carousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+
+            <!--Poner tantos puntos como imagenes-->
+            <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <button type="button" commandfor="dialog_carousel" command="show-modal" class="carousel-img-wrapper">
+                    <img src="https://ichef.bbci.co.uk/news/1024/cpsprodpb/017d/live/8703abf0-2180-11ef-9628-ff2abcc9602e.jpg.webp"
+                        class="d-block w-100" alt="...">
+                </button>
+            </div>
+            <div class="carousel-item">
+                <button type="button" commandfor="dialog_carousel" command="show-modal" class="carousel-img-wrapper">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0U7yCb251d5aeMAYnJyRRbyrS6WlmsDON3w&s"
+                        class="d-block w-100" alt="...">
+                </button>
+            </div>
+            <div class="carousel-item">
+                <button type="button" commandfor="dialog_carousel" command="show-modal" class="carousel-img-wrapper">
+                    <img src="https://www.fcbarcelona.com/fcbarcelona/photo/2022/08/02/ae5252d1-b79b-4950-9e34-6e67fac09bb0/LeoMessi20092010_pic_fcb-arsenal62.jpg"
+                        class="d-block w-100" alt="...">
+                </button>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+        </button>
+    </div>
+
+    <dialog id="dialog_carousel" closedby="any" class="container">
+        <div>
+            <img src="https://i.pinimg.com/736x/13/be/95/13be95147b920e7c4ee958ff30db7a11.jpg" id="dialog_image" class="d-block"
+                alt="...">
+            <button type="button" commandfor="dialog_carousel" command="close">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-x">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M18 6l-12 12" />
+                    <path d="M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+    </dialog>
+
+    <div id="content_divider">
+        <div class="content_panel">
+            <h2>Sobre el proyecto</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod atque quis aliquid itaque placeat,
+                dolorem
+                vel pariatur! Eius corrupti porro suscipit, nihil doloremque saepe enim doloribus. Odio amet
+                adipisci
+                tempore tempora aspernatur facilis quos deserunt? Possimus atque, cumque provident debitis enim
+                nobis
+                non nesciunt quas esse quisquam dolorem voluptate omnis!
+                <br><br>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic amet nesciunt cupiditate omnis
+                tenetur est maiores impedit dolore eveniet. Cumque modi totam sequi fuga odio illum id commodi
+                quasi dolor!
+            </p>
+            <h2>Características clave</h2>
+            <div class="feature_container">
+                <div class="feature">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-user-circle">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+                        <path d="M9 10a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+                        <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" />
+                    </svg>
+                    <div class="feature_content">
+                        <h4>Gestión de usuarios</h4>
+                        <p>Permite a los usuarios registrarse, iniciar sesión y gestionar sus perfiles de manera
+                            segura.</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-database">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M4 6a8 3 0 1 0 16 0a8 3 0 1 0 -16 0" />
+                        <path d="M4 6v6a8 3 0 0 0 16 0v-6" />
+                        <path d="M4 12v6a8 3 0 0 0 16 0v-6" />
+                    </svg>
+                    <div class="feature_content">
+                        <h4>Base de datos modelada a medida</h4>
+                        <p>Permite a los usuarios registrarse, iniciar sesión y gestionar sus perfiles de manera
+                            segura.</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-database">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M4 6a8 3 0 1 0 16 0a8 3 0 1 0 -16 0" />
+                        <path d="M4 6v6a8 3 0 0 0 16 0v-6" />
+                        <path d="M4 12v6a8 3 0 0 0 16 0v-6" />
+                    </svg>
+                    <div class="feature_content">
+                        <h4>Base de datos modelada a medida</h4>
+                        <p>Permite a los usuarios registrarse, iniciar sesión y gestionar sus perfiles de manera
+                            segura.</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-database">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M4 6a8 3 0 1 0 16 0a8 3 0 1 0 -16 0" />
+                        <path d="M4 6v6a8 3 0 0 0 16 0v-6" />
+                        <path d="M4 12v6a8 3 0 0 0 16 0v-6" />
+                    </svg>
+                    <div class="feature_content">
+                        <h4>Base de datos modelada a medida</h4>
+                        <p>Permite a los usuarios registrarse, iniciar sesión y gestionar sus perfiles de manera
+                            segura.</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-database">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M4 6a8 3 0 1 0 16 0a8 3 0 1 0 -16 0" />
+                        <path d="M4 6v6a8 3 0 0 0 16 0v-6" />
+                        <path d="M4 12v6a8 3 0 0 0 16 0v-6" />
+                    </svg>
+                    <div class="feature_content">
+                        <h4>Base de datos modelada a medida</h4>
+                        <p>Permite a los usuarios registrarse, iniciar sesión y gestionar sus perfiles de manera
+                            segura.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content_panel">
+            <aside class="aside_content">
+                <h3>Tecnologías</h3>
+                <div class="tech_chips_container">
+                    <span class="tech_chip">HTML</span>
+                    <span class="tech_chip">CSS</span>
+                    <span class="tech_chip">JavaScript</span>
+                    <span class="tech_chip">Bootstrap</span>
+                    <span class="tech_chip">PHP</span>
+                    <span class="tech_chip">MySQL</span>
+                </div>
+            </aside>
+            <aside class="aside_content">
+                <h3>Detalles del rol</h3>
+                <p><strong>Tipo de proyecto</strong>Freelance</p>
+                <p><strong>Mi rol</strong>Full-Stack</p>
+                <p><strong>Duración</strong>4 meses</p>
+                <p><strong>Equipo</strong>4 miembros</p>
+            </aside>
+            <aside class="aside_content">
+                <h3>Compartir</h3>
+                <div class="share_container">
+                    <button type="button" id="copy_button" class="share_link">
+                        <div class="share_icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="icon icon-tabler icons-tabler-outline icon-tabler-link">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path d="M9 15l6 -6" />
+                                <path d="M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464" />
+                                <path
+                                    d="M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463" />
+                            </svg>
+                        </div>
+                        <span>Copiar enlace</span>
+                    </button>
+                    <a href="" target="_blank" rel="noopener noreferrer" id="email_button" class="share_link">
+                        <div class="share_icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="icon icon-tabler icons-tabler-outline icon-tabler-mail">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path
+                                    d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10" />
+                                <path d="M3 7l9 6l9 -6" />
+                            </svg>
+                        </div>
+                        <span>Correo</span>
+                    </a>
+                    <a href="" target="_blank" rel="noopener noreferrer" id="facebook_button"
+                        class="share_link">
+                        <div class="share_icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="icon icon-tabler icons-tabler-outline icon-tabler-brand-facebook">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path
+                                    d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" />
+                            </svg>
+                        </div>
+                        <span>Facebook</span>
+                    </a>
+                    <a href="" target="_blank" rel="noopener noreferrer" id="whatsapp_button"
+                        class="share_link">
+                        <div class="share_icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
+                                <path
+                                    d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
+                            </svg>
+                        </div>
+                        <span>WhatsApp</span>
+                    </a>
+                </div>
+            </aside>
+        </div>
+    </div>
+    <section id="other_projects">
+        <h2>Otros proyectos</h2>
+        <div id="project_carousel">
+            <a href="index.html" class="project">
+                <div class="project_inner">
+                    <img src="https://matematicasentumundo.es/CINE/Interstellar3.jpg" alt="" loading="lazy">
+                    <div class="project_content">
+                        <div class="span_container">
+                            <span>
+                                <!-- checar q los paths no tengan style, sino no agarra el estilo del color -->
+                                <svg viewBox="0 0 32 32">
+                                    <path
+                                        d="M14.135 4H18.1v18.169a26.218 26.218 0 0 1-5.143.535c-4.842-.005-7.362-2.168-7.362-6.322 0-4 2.673-6.6 6.816-6.6a6.448 6.448 0 0 1 1.724.2V4Zm0 9.142a3.992 3.992 0 0 0-1.337-.2c-2 0-3.163 1.223-3.163 3.366 0 2.087 1.107 3.239 3.138 3.239a9.355 9.355 0 0 0 1.362-.1v-6.3Z" />
+                                    <path
+                                        d="M24.4 10.059v9.1c0 3.133-.235 4.639-.923 5.938A6.316 6.316 0 0 1 20.237 28l-3.678-1.733a5.708 5.708 0 0 0 3.141-2.629c.566-1.121.745-2.42.745-5.837v-7.742ZM20.441 4.02h3.964v4.028h-3.964z" />
+                                </svg>
+                                Django
+                            </span>
+                            <span>
+                                <svg preserveAspectRatio="xMidYMid" viewBox="0 0 256 252">
+                                    <path fill="#FFF"
+                                        d="M236 194c-14 0-25 1-34 5-3 1-7 1-7 4l3 6c2 3 5 8 9 11l11 8 21 10 11 9 6 4-3-6-5-5c-5-7-11-13-18-18-6-3-18-9-20-15h-1l12-3 18-3 8-2v-2l-9-10c-8-8-18-15-28-22l-18-8c-2-1-6-2-7-4l-7-13-15-30-8-20c-18-30-38-48-68-65-6-4-14-5-22-7l-13-1-8-6C34 5 8-9 1 9c-5 11 7 22 11 28l9 13 3 9c3 8 5 17 9 24l6 10c2 2 4 3 5 6-3 4-3 9-4 13-7 20-4 44 5 59 2 4 9 14 18 10 8-3 6-13 8-22l1-4 8 14c5 9 14 18 22 24 4 3 8 8 13 10l-4-4-9-10c-8-10-14-21-20-32l-7-17-3-6c-3 4-7 7-9 12-3 7-3 17-4 26h-1c-6-1-8-7-10-12-5-12-6-32-1-46 1-4 6-15 4-19-1-3-4-5-6-7l-7-12-10-30-9-13c-3-5-7-8-10-14-1-2-2-5 0-7l2-2c2-2 9 0 11 1 6 3 12 5 17 9l8 6h4c6 1 12 0 17 2 9 3 18 7 25 12 23 14 42 35 54 59 3 4 3 8 5 12l12 26c4 8 7 16 12 23 3 4 14 6 18 8l12 4 18 12c2 2 11 7 12 10Z" />
+                                    <path fill="#FFF" d="m58 43-7 1 6 7 4 9v-1c3-1 4-4 4-8l-2-4-5-4Z" />
+                                </svg>
+                                MySQL
+                            </span>
+                            <span>
+                                <svg viewBox="0 0 256 204" preserveAspectRatio="xMidYMid">
+                                    <path fill="#7E13F8"
+                                        d="M53.172 0C38.565 0 27.756 12.785 28.24 26.65c.465 13.32-.139 30.573-4.482 44.642C19.402 85.402 12.034 94.34 0 95.488v12.956c12.034 1.148 19.402 10.086 23.758 24.197 4.343 14.069 4.947 31.32 4.482 44.641-.484 13.863 10.325 26.65 24.934 26.65h149.673c14.608 0 25.414-12.785 24.93-26.65-.464-13.32.139-30.572 4.482-44.641 4.359-14.11 11.707-23.05 23.741-24.197V95.488c-12.034-1.148-19.382-10.086-23.74-24.196-4.344-14.067-4.947-31.321-4.483-44.642C228.261 12.787 217.455 0 202.847 0H53.17h.002ZM173.56 125.533c0 19.092-14.24 30.67-37.872 30.67h-40.23a4.339 4.339 0 0 1-4.338-4.339V52.068a4.339 4.339 0 0 1 4.339-4.34h39.999c19.705 0 32.637 10.675 32.637 27.063 0 11.503-8.7 21.801-19.783 23.604v.601c15.089 1.655 25.248 12.104 25.248 26.537Zm-42.26-64.05h-22.937v32.4h19.32c14.934 0 23.17-6.014 23.17-16.764 0-10.073-7.082-15.636-19.552-15.636Zm-22.937 45.256v35.705h23.782c15.548 0 23.786-6.239 23.786-17.965 0-11.728-8.467-17.742-24.786-17.742h-22.782v.002Z" />
+                                </svg>
+                                Bootstrap
+                            </span>
+                        </div>
+                        <p>Pryecto escolar</p>
+                        <h3>Project 1</h3>
+                    </div>
+                </div>
+            </a>
+            <a href="index.html" class="project">
+                <div class="project_inner">
+                    <img src="https://testdriven.io/static/images/blog/django/customize-django-admin/django-admin-custom-action.png"
+                        alt="" loading="lazy">
+                    <div class="project_content">
+                        <div class="span_container">
+                            <span>
+                                <!-- checar q los paths no tengan style, sino no agarra el estilo del color -->
+                                <svg viewBox="0 0 32 32">
+                                    <path
+                                        d="M14.135 4H18.1v18.169a26.218 26.218 0 0 1-5.143.535c-4.842-.005-7.362-2.168-7.362-6.322 0-4 2.673-6.6 6.816-6.6a6.448 6.448 0 0 1 1.724.2V4Zm0 9.142a3.992 3.992 0 0 0-1.337-.2c-2 0-3.163 1.223-3.163 3.366 0 2.087 1.107 3.239 3.138 3.239a9.355 9.355 0 0 0 1.362-.1v-6.3Z" />
+                                    <path
+                                        d="M24.4 10.059v9.1c0 3.133-.235 4.639-.923 5.938A6.316 6.316 0 0 1 20.237 28l-3.678-1.733a5.708 5.708 0 0 0 3.141-2.629c.566-1.121.745-2.42.745-5.837v-7.742ZM20.441 4.02h3.964v4.028h-3.964z" />
+                                </svg>
+                                Django
+                            </span>
+                            <span>
+                                <svg preserveAspectRatio="xMidYMid" viewBox="0 0 256 252">
+                                    <path fill="#FFF"
+                                        d="M236 194c-14 0-25 1-34 5-3 1-7 1-7 4l3 6c2 3 5 8 9 11l11 8 21 10 11 9 6 4-3-6-5-5c-5-7-11-13-18-18-6-3-18-9-20-15h-1l12-3 18-3 8-2v-2l-9-10c-8-8-18-15-28-22l-18-8c-2-1-6-2-7-4l-7-13-15-30-8-20c-18-30-38-48-68-65-6-4-14-5-22-7l-13-1-8-6C34 5 8-9 1 9c-5 11 7 22 11 28l9 13 3 9c3 8 5 17 9 24l6 10c2 2 4 3 5 6-3 4-3 9-4 13-7 20-4 44 5 59 2 4 9 14 18 10 8-3 6-13 8-22l1-4 8 14c5 9 14 18 22 24 4 3 8 8 13 10l-4-4-9-10c-8-10-14-21-20-32l-7-17-3-6c-3 4-7 7-9 12-3 7-3 17-4 26h-1c-6-1-8-7-10-12-5-12-6-32-1-46 1-4 6-15 4-19-1-3-4-5-6-7l-7-12-10-30-9-13c-3-5-7-8-10-14-1-2-2-5 0-7l2-2c2-2 9 0 11 1 6 3 12 5 17 9l8 6h4c6 1 12 0 17 2 9 3 18 7 25 12 23 14 42 35 54 59 3 4 3 8 5 12l12 26c4 8 7 16 12 23 3 4 14 6 18 8l12 4 18 12c2 2 11 7 12 10Z" />
+                                    <path fill="#FFF" d="m58 43-7 1 6 7 4 9v-1c3-1 4-4 4-8l-2-4-5-4Z" />
+                                </svg>
+                                MySQL
+                            </span>
+                            <span>
+                                <svg viewBox="0 0 256 204" preserveAspectRatio="xMidYMid">
+                                    <path fill="#7E13F8"
+                                        d="M53.172 0C38.565 0 27.756 12.785 28.24 26.65c.465 13.32-.139 30.573-4.482 44.642C19.402 85.402 12.034 94.34 0 95.488v12.956c12.034 1.148 19.402 10.086 23.758 24.197 4.343 14.069 4.947 31.32 4.482 44.641-.484 13.863 10.325 26.65 24.934 26.65h149.673c14.608 0 25.414-12.785 24.93-26.65-.464-13.32.139-30.572 4.482-44.641 4.359-14.11 11.707-23.05 23.741-24.197V95.488c-12.034-1.148-19.382-10.086-23.74-24.196-4.344-14.067-4.947-31.321-4.483-44.642C228.261 12.787 217.455 0 202.847 0H53.17h.002ZM173.56 125.533c0 19.092-14.24 30.67-37.872 30.67h-40.23a4.339 4.339 0 0 1-4.338-4.339V52.068a4.339 4.339 0 0 1 4.339-4.34h39.999c19.705 0 32.637 10.675 32.637 27.063 0 11.503-8.7 21.801-19.783 23.604v.601c15.089 1.655 25.248 12.104 25.248 26.537Zm-42.26-64.05h-22.937v32.4h19.32c14.934 0 23.17-6.014 23.17-16.764 0-10.073-7.082-15.636-19.552-15.636Zm-22.937 45.256v35.705h23.782c15.548 0 23.786-6.239 23.786-17.965 0-11.728-8.467-17.742-24.786-17.742h-22.782v.002Z" />
+                                </svg>
+                                Bootstrap
+                            </span>
+                        </div>
+                        <p>Pryecto escolar</p>
+                        <h3>Project 1</h3>
+                    </div>
+                </div>
+            </a>
+            <a href="index.html" class="project">
+                <div class="project_inner">
+                    <img src="https://matematicasentumundo.es/CINE/Interstellar3.jpg" alt="" loading="lazy">
+                    <div class="project_content">
+                        <div class="span_container">
+                            <span>
+                                <!-- checar q los paths no tengan style, sino no agarra el estilo del color -->
+                                <svg viewBox="0 0 32 32">
+                                    <path
+                                        d="M14.135 4H18.1v18.169a26.218 26.218 0 0 1-5.143.535c-4.842-.005-7.362-2.168-7.362-6.322 0-4 2.673-6.6 6.816-6.6a6.448 6.448 0 0 1 1.724.2V4Zm0 9.142a3.992 3.992 0 0 0-1.337-.2c-2 0-3.163 1.223-3.163 3.366 0 2.087 1.107 3.239 3.138 3.239a9.355 9.355 0 0 0 1.362-.1v-6.3Z" />
+                                    <path
+                                        d="M24.4 10.059v9.1c0 3.133-.235 4.639-.923 5.938A6.316 6.316 0 0 1 20.237 28l-3.678-1.733a5.708 5.708 0 0 0 3.141-2.629c.566-1.121.745-2.42.745-5.837v-7.742ZM20.441 4.02h3.964v4.028h-3.964z" />
+                                </svg>
+                                Django
+                            </span>
+                            <span>
+                                <svg preserveAspectRatio="xMidYMid" viewBox="0 0 256 252">
+                                    <path fill="#FFF"
+                                        d="M236 194c-14 0-25 1-34 5-3 1-7 1-7 4l3 6c2 3 5 8 9 11l11 8 21 10 11 9 6 4-3-6-5-5c-5-7-11-13-18-18-6-3-18-9-20-15h-1l12-3 18-3 8-2v-2l-9-10c-8-8-18-15-28-22l-18-8c-2-1-6-2-7-4l-7-13-15-30-8-20c-18-30-38-48-68-65-6-4-14-5-22-7l-13-1-8-6C34 5 8-9 1 9c-5 11 7 22 11 28l9 13 3 9c3 8 5 17 9 24l6 10c2 2 4 3 5 6-3 4-3 9-4 13-7 20-4 44 5 59 2 4 9 14 18 10 8-3 6-13 8-22l1-4 8 14c5 9 14 18 22 24 4 3 8 8 13 10l-4-4-9-10c-8-10-14-21-20-32l-7-17-3-6c-3 4-7 7-9 12-3 7-3 17-4 26h-1c-6-1-8-7-10-12-5-12-6-32-1-46 1-4 6-15 4-19-1-3-4-5-6-7l-7-12-10-30-9-13c-3-5-7-8-10-14-1-2-2-5 0-7l2-2c2-2 9 0 11 1 6 3 12 5 17 9l8 6h4c6 1 12 0 17 2 9 3 18 7 25 12 23 14 42 35 54 59 3 4 3 8 5 12l12 26c4 8 7 16 12 23 3 4 14 6 18 8l12 4 18 12c2 2 11 7 12 10Z" />
+                                    <path fill="#FFF" d="m58 43-7 1 6 7 4 9v-1c3-1 4-4 4-8l-2-4-5-4Z" />
+                                </svg>
+                                MySQL
+                            </span>
+                            <span>
+                                <svg viewBox="0 0 256 204" preserveAspectRatio="xMidYMid">
+                                    <path fill="#7E13F8"
+                                        d="M53.172 0C38.565 0 27.756 12.785 28.24 26.65c.465 13.32-.139 30.573-4.482 44.642C19.402 85.402 12.034 94.34 0 95.488v12.956c12.034 1.148 19.402 10.086 23.758 24.197 4.343 14.069 4.947 31.32 4.482 44.641-.484 13.863 10.325 26.65 24.934 26.65h149.673c14.608 0 25.414-12.785 24.93-26.65-.464-13.32.139-30.572 4.482-44.641 4.359-14.11 11.707-23.05 23.741-24.197V95.488c-12.034-1.148-19.382-10.086-23.74-24.196-4.344-14.067-4.947-31.321-4.483-44.642C228.261 12.787 217.455 0 202.847 0H53.17h.002ZM173.56 125.533c0 19.092-14.24 30.67-37.872 30.67h-40.23a4.339 4.339 0 0 1-4.338-4.339V52.068a4.339 4.339 0 0 1 4.339-4.34h39.999c19.705 0 32.637 10.675 32.637 27.063 0 11.503-8.7 21.801-19.783 23.604v.601c15.089 1.655 25.248 12.104 25.248 26.537Zm-42.26-64.05h-22.937v32.4h19.32c14.934 0 23.17-6.014 23.17-16.764 0-10.073-7.082-15.636-19.552-15.636Zm-22.937 45.256v35.705h23.782c15.548 0 23.786-6.239 23.786-17.965 0-11.728-8.467-17.742-24.786-17.742h-22.782v.002Z" />
+                                </svg>
+                                Bootstrap
+                            </span>
+                        </div>
+                        <p>Pryecto escolar</p>
+                        <h3>Project 1</h3>
+                    </div>
+                </div>
+            </a>
+            <a href="index.html" class="project">
+                <div class="project_inner">
+                    <img src="https://matematicasentumundo.es/CINE/Interstellar3.jpg" alt="" loading="lazy">
+                    <div class="project_content">
+                        <div class="span_container">
+                            <span>
+                                <!-- checar q los paths no tengan style, sino no agarra el estilo del color -->
+                                <svg viewBox="0 0 32 32">
+                                    <path
+                                        d="M14.135 4H18.1v18.169a26.218 26.218 0 0 1-5.143.535c-4.842-.005-7.362-2.168-7.362-6.322 0-4 2.673-6.6 6.816-6.6a6.448 6.448 0 0 1 1.724.2V4Zm0 9.142a3.992 3.992 0 0 0-1.337-.2c-2 0-3.163 1.223-3.163 3.366 0 2.087 1.107 3.239 3.138 3.239a9.355 9.355 0 0 0 1.362-.1v-6.3Z" />
+                                    <path
+                                        d="M24.4 10.059v9.1c0 3.133-.235 4.639-.923 5.938A6.316 6.316 0 0 1 20.237 28l-3.678-1.733a5.708 5.708 0 0 0 3.141-2.629c.566-1.121.745-2.42.745-5.837v-7.742ZM20.441 4.02h3.964v4.028h-3.964z" />
+                                </svg>
+                                Django
+                            </span>
+                            <span>
+                                <svg preserveAspectRatio="xMidYMid" viewBox="0 0 256 252">
+                                    <path fill="#FFF"
+                                        d="M236 194c-14 0-25 1-34 5-3 1-7 1-7 4l3 6c2 3 5 8 9 11l11 8 21 10 11 9 6 4-3-6-5-5c-5-7-11-13-18-18-6-3-18-9-20-15h-1l12-3 18-3 8-2v-2l-9-10c-8-8-18-15-28-22l-18-8c-2-1-6-2-7-4l-7-13-15-30-8-20c-18-30-38-48-68-65-6-4-14-5-22-7l-13-1-8-6C34 5 8-9 1 9c-5 11 7 22 11 28l9 13 3 9c3 8 5 17 9 24l6 10c2 2 4 3 5 6-3 4-3 9-4 13-7 20-4 44 5 59 2 4 9 14 18 10 8-3 6-13 8-22l1-4 8 14c5 9 14 18 22 24 4 3 8 8 13 10l-4-4-9-10c-8-10-14-21-20-32l-7-17-3-6c-3 4-7 7-9 12-3 7-3 17-4 26h-1c-6-1-8-7-10-12-5-12-6-32-1-46 1-4 6-15 4-19-1-3-4-5-6-7l-7-12-10-30-9-13c-3-5-7-8-10-14-1-2-2-5 0-7l2-2c2-2 9 0 11 1 6 3 12 5 17 9l8 6h4c6 1 12 0 17 2 9 3 18 7 25 12 23 14 42 35 54 59 3 4 3 8 5 12l12 26c4 8 7 16 12 23 3 4 14 6 18 8l12 4 18 12c2 2 11 7 12 10Z" />
+                                    <path fill="#FFF" d="m58 43-7 1 6 7 4 9v-1c3-1 4-4 4-8l-2-4-5-4Z" />
+                                </svg>
+                                MySQL
+                            </span>
+                            <span>
+                                <svg viewBox="0 0 256 204" preserveAspectRatio="xMidYMid">
+                                    <path fill="#7E13F8"
+                                        d="M53.172 0C38.565 0 27.756 12.785 28.24 26.65c.465 13.32-.139 30.573-4.482 44.642C19.402 85.402 12.034 94.34 0 95.488v12.956c12.034 1.148 19.402 10.086 23.758 24.197 4.343 14.069 4.947 31.32 4.482 44.641-.484 13.863 10.325 26.65 24.934 26.65h149.673c14.608 0 25.414-12.785 24.93-26.65-.464-13.32.139-30.572 4.482-44.641 4.359-14.11 11.707-23.05 23.741-24.197V95.488c-12.034-1.148-19.382-10.086-23.74-24.196-4.344-14.067-4.947-31.321-4.483-44.642C228.261 12.787 217.455 0 202.847 0H53.17h.002ZM173.56 125.533c0 19.092-14.24 30.67-37.872 30.67h-40.23a4.339 4.339 0 0 1-4.338-4.339V52.068a4.339 4.339 0 0 1 4.339-4.34h39.999c19.705 0 32.637 10.675 32.637 27.063 0 11.503-8.7 21.801-19.783 23.604v.601c15.089 1.655 25.248 12.104 25.248 26.537Zm-42.26-64.05h-22.937v32.4h19.32c14.934 0 23.17-6.014 23.17-16.764 0-10.073-7.082-15.636-19.552-15.636Zm-22.937 45.256v35.705h23.782c15.548 0 23.786-6.239 23.786-17.965 0-11.728-8.467-17.742-24.786-17.742h-22.782v.002Z" />
+                                </svg>
+                                Bootstrap
+                            </span>
+                        </div>
+                        <p>Pryecto escolar</p>
+                        <h3>Project 1</h3>
+                    </div>
+                </div>
+            </a>
+            <div class="project">
+                <h3>Project 5</h3>
+            </div>
+            <div class="project">
+                <h3>Project 6</h3>
+            </div>
+            <div class="project">
+                <h3>Project 7</h3>
+            </div>
+            <div class="project">
+                <h3>Project 8</h3>
+            </div>
+            <div class="project">
+                <h3>Project 9</h3>
+            </div>
+            <div class="project">
+                <h3>Project 10</h3>
+            </div>
+            <div class="project">
+                <h3>Project 11</h3>
+            </div>
+            <div class="project">
+                <h3>Project 12</h3>
+            </div>
+        </div>
+    </section>
+    <!-- Copy toast -->
+    <div id="toast_container" class="position-fixed bottom-0 start-50 translate-middle-x p-3" style="z-index: 11">
+        <div id="copy_toast" class="toast align-items-center" role="alert" aria-live="assertive"
+            aria-atomic="true">
+            <div class="d-flex">
+                <div id="toast_message" class="toast-body">
+
+                </div>
+                <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
+                    aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock content %}

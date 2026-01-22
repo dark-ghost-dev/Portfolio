@@ -1,3 +1,7 @@
+#projects {
+    margin: 30px auto;
+}
+
 #projects_header {
     width: 100%;
     display: flex;
