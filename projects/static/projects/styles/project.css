@@ -429,6 +429,7 @@ p {
 #project_carousel::scroll-button(right):disabled,
 #project_carousel::scroll-button(left):disabled {
     opacity: 0.5;
+    cursor: auto;
 }
 
 .project {
@@ -527,5 +528,3 @@ p {
 .project:active .project_inner {
     transform: scale(0.97);
 }
-
-/* mediaquery 767 en responsive */

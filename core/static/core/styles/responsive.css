@@ -1,3 +1,17 @@
+@media (1200px <=width <=1207.96px) {
+    #project_carousel {
+        --offset: calc((100dvw - 1116px) / 2);
+    }
+
+    #project_carousel::scroll-button(left) {
+        translate: var(--offset);
+    }
+
+    #project_carousel::scroll-button(right) {
+        translate: calc(var(--offset) * -1);
+    }
+}
+
 @media (max-width: 1199px) {
     #main_title {
         width: fit-content;
@@ -5,6 +19,20 @@
 
     .project {
         flex: 0 0 calc(50% - 10px);
+    }
+
+    @media (992px <=width <=1027.96px) {
+        #project_carousel {
+            --offset: calc((100dvw - 936px) / 2);
+        }
+
+        #project_carousel::scroll-button(left) {
+            translate: var(--offset);
+        }
+
+        #project_carousel::scroll-button(right) {
+            translate: calc(var(--offset) * -1);
+        }
     }
 
     @media (max-width: 991px) {
@@ -53,6 +81,20 @@
                     margin-left: 0.5rem;
                 }
 
+                @media (768px <=width <=787.96px) {
+                    #project_carousel {
+                        --offset: calc((100dvw - 696px) / 2);
+                    }
+
+                    #project_carousel::scroll-button(left) {
+                        translate: var(--offset);
+                    }
+
+                    #project_carousel::scroll-button(right) {
+                        translate: calc(var(--offset) * -1);
+                    }
+                }
+
                 @media (max-width: 767px) {
                     #projects_header .all_projects_btn {
                         display: none;
@@ -68,6 +110,20 @@
 
                     .project {
                         flex: 0 0 100%;
+                    }
+
+                    @media (576px <=width <=607.96px) {
+                        #project_carousel {
+                            --offset: calc((100dvw - 516px) / 2);
+                        }
+
+                        #project_carousel::scroll-button(left) {
+                            translate: var(--offset);
+                        }
+
+                        #project_carousel::scroll-button(right) {
+                            translate: calc(var(--offset) * -1);
+                        }
                     }
 
                     /* Pantallas pequeñas (móviles, <600px) */
@@ -88,6 +144,14 @@
                         @media (max-width: 575px) {
                             #other_projects {
                                 max-width: calc(100dvw - 1.5rem);
+                            }
+
+                            #project_carousel::scroll-button(left) {
+                                translate: 12px;
+                            }
+
+                            #project_carousel::scroll-button(right) {
+                                translate: -12px;
                             }
 
                             /* Pantallas pequeñas (<563px) */
