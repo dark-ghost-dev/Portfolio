@@ -37,7 +37,7 @@
     transition: all 0.2s ease-in-out;
 }
 
-#contact a > svg {
+#contact a>svg {
     position: absolute;
     right: 5%;
     bottom: -20px;
@@ -82,18 +82,18 @@
     width: 20px;
 }
 
-#contact_mail > svg {
+.contact_mail>svg {
     bottom: -25px;
 }
 
-#contact_personal_github > svg,
-#contact_university_github > svg,
-#contact_facebook > svg {
+.contact_github>svg,
+.contact_facebook>svg {
     bottom: -15px;
 }
-#contact_linkedin > svg,
-#contact_instagram > svg,
-#contact_whatsapp > svg {
+
+.contact_linkedin>svg,
+.contact_instagram>svg,
+.contact_whatsapp>svg {
     bottom: -20px;
 }
 
@@ -101,7 +101,7 @@
     transform: translateY(-2px);
 }
 
-#contact a:hover > svg {
+#contact a:hover>svg {
     transform: translateY(-5px);
 }
 
@@ -113,104 +113,101 @@
     transform: translateY(-2px) scale(0.97);
 }
 
-#contact_mail:hover {
+#contact .contact_mail:hover {
     border-color: var(--accent-cool);
 }
 
-#contact_mail:hover > svg {
+.contact_mail:hover>svg {
     stroke: var(--accent-cool);
     stroke-width: 0.8;
 }
 
-#contact_mail:hover .social_link {
+#contact .contact_mail:hover .social_link {
     color: var(--accent-cool);
 }
 
-#contact_mail .icon_container {
+.contact_mail .icon_container {
     background-color: var(--accent-cool);
 }
 
-#contact_personal_github:hover,
-#contact_university_github:hover {
+#contact .contact_github:hover {
     border-color: var(--github-border);
 }
 
-#contact_personal_github:hover > svg,
-#contact_university_github:hover > svg {
+.contact_github:hover>svg {
     stroke: var(--github-border);
     stroke-width: 0.8;
 }
 
-#contact_personal_github .icon_container,
-#contact_university_github .icon_container {
+.contact_github .icon_container {
     background-color: var(--github-color);
     border: 1px solid var(--github-border);
 }
 
-#contact_linkedin:hover {
+#contact .contact_linkedin:hover {
     border-color: var(--linkedin-color);
 }
 
-#contact_linkedin:hover > svg {
+.contact_linkedin:hover>svg {
     stroke: var(--linkedin-color);
     stroke-width: 0.8;
 }
 
-#contact_linkedin:hover .social_link {
+#contact .contact_linkedin:hover .social_link {
     color: var(--linkedin-color);
 }
 
-#contact_linkedin .icon_container {
+.contact_linkedin .icon_container {
     background-color: var(--linkedin-color);
 }
 
-#contact_instagram:hover {
+#contact .contact_instagram:hover {
     border-color: var(--instagram-color);
 }
 
-#contact_instagram:hover > svg {
+.contact_instagram:hover>svg {
     stroke: var(--instagram-color);
     stroke-width: 0.8;
 }
 
-#contact_instagram:hover .social_link {
+#contact .contact_instagram:hover .social_link {
     color: var(--instagram-color);
 }
 
-#contact_instagram .icon_container {
+.contact_instagram .icon_container {
     background: var(--instagram-gradient);
 }
 
-#contact_facebook:hover {
+#contact .contact_facebook:hover {
     border-color: var(--facebook-color);
 }
 
-#contact_facebook:hover > svg {
+.contact_facebook:hover>svg {
     stroke: var(--facebook-color);
     stroke-width: 0.8;
 }
 
-#contact_facebook:hover .social_link {
+#contact .contact_facebook:hover .social_link {
     color: var(--facebook-color);
 }
 
-#contact_facebook .icon_container {
+.contact_facebook .icon_container {
     background-color: var(--facebook-color);
 }
 
-#contact_whatsapp:hover {
+#contact .contact_whatsapp:hover {
     border-color: var(--whatsapp-color);
 }
 
-#contact_whatsapp:hover > svg {
+.contact_whatsapp:hover>svg {
     stroke: var(--whatsapp-color);
     stroke-width: 0.8;
 }
 
-#contact_whatsapp:hover .social_link {
+#contact .contact_whatsapp:hover .social_link {
     color: var(--whatsapp-color);
 }
 
-#contact_whatsapp .icon_container {
+.contact_whatsapp .icon_container {
     background-color: var(--whatsapp-color);
 }

@@ -696,96 +696,24 @@
 
 <section id="contact">
     <h2>Contacto</h2>
-    <a href="" id="contact_mail">
-        {% include 'icons/mail-fill.svg' %}
+    {% for social in social_users %}
+    <a href="{{ social.social_network.base_url }}{{ social.profile_url }}" target="_blank" class="contact_{{ social.social_network.slug }}">
+        {% with icon='icons/'|add:social.social_network.slug|add:'-fill.svg' %}
+            {% include icon %}
+        {% endwith %}
         <div class="icon_container">
-            {% include 'icons/mail.svg' %}
+            {% with icon='icons/'|add:social.social_network.slug|add:'.svg' %}
+                {% include icon %}
+            {% endwith %}
         </div>
         <div class="social_link">
-            Correo
-            <span>uzielo8017518@gmail.com</span>
+            {{ social.social_network.name }}{% if social.additional_info %} {{ social.additional_info }}{% endif %}
+            <span>{{ social.text }}</span>
         </div>
         <div class="arrow_container">
             {% include 'icons/external-link.svg' %}
         </div>
     </a>
-    <a href="" id="contact_personal_github">
-        {% include 'icons/github-fill.svg' %}
-        <div class="icon_container">
-            {% include 'icons/github.svg' %}
-        </div>
-        <div class="social_link">
-            GitHub Personal
-            <span>Siempre estoy creando algo nuevo.</span>
-        </div>
-        <div class="arrow_container">
-            {% include 'icons/external-link.svg' %}
-        </div>
-    </a>
-    <a href="" id="contact_university_github">
-        {% include 'icons/github-fill.svg' %}
-        <div class="icon_container">
-            {% include 'icons/github.svg' %}
-        </div>
-        <div class="social_link">
-            GitHub Universitario
-            <span>¡Checa mis proyectos universitarios!</span>
-        </div>
-        <div class="arrow_container">
-            {% include 'icons/external-link.svg' %}
-        </div>
-    </a>
-    <a href="" id="contact_linkedin">
-        {% include 'icons/linkedin-fill.svg' %}
-        <div class="icon_container">
-            {% include 'icons/linkedin.svg' %}
-        </div>
-        <div class="social_link">
-            LinkedIn
-            <span>Mi lado mas serio.</span>
-        </div>
-        <div class="arrow_container">
-            {% include 'icons/external-link.svg' %}
-        </div>
-    </a>
-    <a href="" id="contact_instagram">
-        {% include 'icons/instagram-fill.svg' %}
-        <div class="icon_container">
-            {% include 'icons/instagram.svg' %}
-        </div>
-        <div class="social_link">
-            Instagram
-            <span>Para mis fans :)</span>
-        </div>
-        <div class="arrow_container">
-            {% include 'icons/external-link.svg' %}
-        </div>
-    </a>
-    <a href="" id="contact_facebook">
-        {% include 'icons/facebook-fill.svg' %}
-        <div class="icon_container">
-            {% include 'icons/facebook.svg' %}
-        </div>
-        <div class="social_link">
-            Facebook
-            <span>Siempre activo viendo memes.</span>
-        </div>
-        <div class="arrow_container">
-            {% include 'icons/external-link.svg' %}
-        </div>
-    </a>
-    <a href="" id="contact_whatsapp">
-        {% include 'icons/whatsapp-fill.svg' %}
-        <div class="icon_container">
-            {% include 'icons/whatsapp.svg' %}
-        </div>
-        <div class="social_link">
-            WhatsApp
-            <span>Activo 24/7 (menos cuando estoy durmiendo).</span>
-        </div>
-        <div class="arrow_container">
-            {% include 'icons/external-link.svg' %}
-        </div>
-    </a>
+    {% endfor %}
 </section>
 {% endblock content %}
