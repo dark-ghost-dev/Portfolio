@@ -12,8 +12,8 @@ class SocialNetworkAdmin(admin.ModelAdmin):
 @admin.register(SocialUser)
 class SocialUserAdmin(SortableAdminMixin, admin.ModelAdmin):
     readonly_fields = ('created', 'modified')
-    list_display = ('id', 'username', 'social_network', 'profile_url', 'order')
-    list_filter = ('social_network',)
+    list_display = ('id', 'username', 'social_network', 'profile_url', 'active', 'is_in_footer', 'order')
+    list_filter = ('social_network', 'active', 'is_in_footer',)
     search_fields = ('username', 'social_network__name')
     ordering = ('order',)
     date_hierarchy = 'created'

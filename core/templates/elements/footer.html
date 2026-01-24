@@ -17,18 +17,14 @@
     </nav>
 
     <div class="footer_social">
-        <a href="https://github.com/" aria-label="Github" class="social_link">
-            {% include 'icons/github.svg' %}
-            Github
+        {% for social in social_users_in_footer %}
+        <a href="{{ social.social_network.base_url }}{{ social.profile_url }}" target="_blank" aria-label="{{ social.social_network.name }}" class="social_link">
+            {% with icon='icons/'|add:social.social_network.slug|add:'.svg' %}
+                {% include icon %}
+            {% endwith %}
+            {{ social.social_network.name }}
         </a>
-        <a href="#" aria-label="LinkedIn" class="social_link">
-            {% include 'icons/linkedin.svg' %}
-            LinkedIn
-        </a>
-        <a href="mailto:uzielo8017518@gmail.com" aria-label="Correo" class="social_link">
-            {% include 'icons/mail.svg' %}
-            Correo
-        </a>
+        {% endfor %}
     </div>
 </div>
 
