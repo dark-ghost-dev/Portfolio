@@ -17,7 +17,7 @@
     </nav>
 
     <div class="footer_social">
-        {% for social in social_users_in_footer %}
+        {% for social in social_users_in_hero %}
         <a href="{{ social.social_network.base_url }}{{ social.profile_url }}" target="_blank" aria-label="{{ social.social_network.name }}" class="social_link">
             {% with icon='icons/'|add:social.social_network.slug|add:'.svg' %}
                 {% include icon %}

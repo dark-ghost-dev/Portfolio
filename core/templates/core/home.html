@@ -58,7 +58,7 @@
                     </div>
                     <div class="info_content">
                         {% include 'icons/mail.svg' %}
-                        <span>uzielo8017518@gmail.com</span>
+                        <span>{{ email.profile_url }}</span>
                     </div>
                 </div>
                 <div class="info_span">
@@ -74,24 +74,16 @@
                 </div>
             </div>
             <ul>
+                {% for social in social_users_in_hero %}
                 <li>
-                    <a href="">
-                        {% include 'icons/github.svg' %}
-                        Github
+                    <a href="{{ social.social_network.base_url }}{{ social.profile_url }}" target="_blank">
+                        {% with icon='icons/'|add:social.social_network.slug|add:'.svg' %}
+                            {% include icon %}
+                        {% endwith %}
+                        {{ social.social_network.name }}
                     </a>
                 </li>
-                <li>
-                    <a href="">
-                        {% include 'icons/linkedin.svg' %}
-                        LinkedIn
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        {% include 'icons/mail.svg' %}
-                        Correo
-                    </a>
-                </li>
+                {% endfor %}
             </ul>
         </div>
     </div>

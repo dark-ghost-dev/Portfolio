@@ -10,9 +10,11 @@ def home(request):
         )
     )
     social_users = SocialUser.objects.filter(active=True)
-    social_users_in_footer = social_users.filter(is_in_footer=True)
+    social_users_in_hero = social_users.filter(is_in_hero=True)
+    email = SocialUser.objects.filter(social_network__slug='mail',active=True).first()
     return render(request, 'core/home.html', {
         'skill_categories': skill_categories,
         'social_users': social_users,
-        'social_users_in_footer': social_users_in_footer
+        'social_users_in_hero': social_users_in_hero,
+        'email': email,
     })

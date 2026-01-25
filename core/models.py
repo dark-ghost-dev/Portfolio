@@ -65,7 +65,7 @@ class SocialUser(models.Model):
     text = models.CharField(max_length=100, verbose_name='Texto')
     additional_info = models.CharField(max_length=100, blank=True, verbose_name='Información adicional')
     active = models.BooleanField(default=True, verbose_name='¿Activo?')
-    is_in_footer = models.BooleanField(default=False, verbose_name='¿Mostrar en el footer?')
+    is_in_hero = models.BooleanField(default=False, verbose_name='¿Mostrar en el hero?')
     order = models.PositiveSmallIntegerField(default=0, verbose_name='Orden')
     created = models.DateTimeField(auto_now_add=True, verbose_name='Fecha de creado')
     modified = models.DateTimeField(auto_now=True, verbose_name='Fecha de modificado')
