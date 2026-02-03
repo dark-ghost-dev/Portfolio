@@ -5,6 +5,9 @@ venv/
 db.sqlite3
 .env
 
+#media
+media/
+
 #caché
 __pycache__/
 
