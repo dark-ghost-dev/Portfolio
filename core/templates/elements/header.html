@@ -39,11 +39,9 @@
                     </button>
                 </div>
                 <ul id="project_list">
-                    <li><a href="#1">ProyectoTPOO</a></li>
-                    <li><a href="#2">Chalino</a></li>
-                    <li><a href="#3">Spokane</a></li>
-                    <li><a href="#4">Portland</a></li>
-                    <li><a href="#5">Bend</a></li>
+                    {% for project in projects %}
+                        <li><a href="{% url 'project' project.slug %}">{{ project.title }}</a></li>
+                    {% endfor %}
                 </ul>
             </div>
         </li>
