@@ -32,6 +32,7 @@ class Project(models.Model):
     title = models.CharField(max_length=200, verbose_name='Título')
     slug = models.SlugField(max_length=200, unique=True, blank=True, verbose_name='Slug')
     description = models.TextField(verbose_name='Descripción')
+    short_description = models.CharField(max_length=300, verbose_name='Descripción corta')
     summary = models.CharField(max_length=200, verbose_name='Resumen')
     end_date = models.DateField(verbose_name='Fecha de finalización')
     demo_url = models.URLField(blank=True, verbose_name='URL de demo')
