@@ -45,10 +45,17 @@ class ProjectCharacteristicAdmin(SortableAdminMixin, admin.ModelAdmin):
     sortable_by = ('order',)
 
 @admin.register(ProjectTechnology)
-class ProjectTechnologyAdmin(SortableAdminMixin, admin.ModelAdmin):
+class ProjectTechnologyAdmin(admin.ModelAdmin):
     readonly_fields = ('created', 'modified')
-    list_display = ('project', 'name', 'modified', 'order')
-    search_fields = ('project__title', 'name')
+    list_display = ('name', 'modified')
+    search_fields = ('name',)
+    date_hierarchy = 'created'
+
+@admin.register(ProjectTechnologyLink)
+class ProjectTechnologyLinkAdmin(SortableAdminMixin, admin.ModelAdmin):
+    readonly_fields = ('created', 'modified')
+    list_display = ('project', 'technology', 'modified', 'order')
+    search_fields = ('project__title', 'technology__name')
     ordering = ('order',)
     date_hierarchy = 'created'
     sortable_by = ('order',)

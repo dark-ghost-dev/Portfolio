@@ -92,20 +92,17 @@
             <aside class="aside_content">
                 <h3>Tecnologías</h3>
                 <div class="tech_chips_container">
-                    <span class="tech_chip">HTML</span>
-                    <span class="tech_chip">CSS</span>
-                    <span class="tech_chip">JavaScript</span>
-                    <span class="tech_chip">Bootstrap</span>
-                    <span class="tech_chip">PHP</span>
-                    <span class="tech_chip">MySQL</span>
+                    {% for link in project.technology_links.all %}
+                    <span class="tech_chip">{{ link.technology.name }}</span>
+                    {% endfor %}
                 </div>
             </aside>
             <aside class="aside_content">
                 <h3>Detalles del rol</h3>
                 <p><strong>Tipo de proyecto</strong>{{ project.project_type }}</p>
                 <p><strong>Mi rol</strong>{{ project.project_role }}</p>
-                <p><strong>Duración</strong>{{ project.duration }} meses</p>
-                <p><strong>Equipo</strong>{{ project.team_members }} miembros</p>
+                <p><strong>Duración</strong>{{ project.duration }} mes{{ project.duration|pluralize:"es" }}</p>
+                <p><strong>Equipo</strong>{% if project.team_members == 1 %}En solitario{% else %}{{ project.team_members }} miembros{% endif %}</p>
             </aside>
             <aside class="aside_content">
                 <h3>Compartir</h3>

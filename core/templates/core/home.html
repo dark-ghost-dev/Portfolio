@@ -125,10 +125,10 @@
             <div class="card_body">
                 <h3>{{ project.title }}</h3>
                 <div class="span_container">
-                    {% for tech in project.technologies.all %}
+                    {% for link in project.technology_links.all %}
                     <span>
-                        {{ tech.icon|safe }}
-                        {{ tech.name }}
+                        {{ link.technology.icon|safe }}
+                        {{ link.technology.name }}
                     </span>
                     {% endfor %}
                 </div>

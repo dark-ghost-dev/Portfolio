@@ -117,17 +117,30 @@ class ProjectCharacteristic(models.Model):
         return f"{self.title}: {self.description}"
     
 class ProjectTechnology(models.Model):
-    project = models.ForeignKey('Project', related_name='technologies', on_delete=models.CASCADE, verbose_name='Proyecto')
     name = models.CharField(max_length=100, verbose_name='Nombre')
     icon = models.TextField(verbose_name="Ícono", help_text="SVG del ícono")
+    created = models.DateTimeField(auto_now_add=True, verbose_name='Fecha de creado')
+    modified = models.DateTimeField(auto_now=True, verbose_name='Fecha de modificado')
+
+    class Meta:
+        verbose_name = 'Tecnología de proyecto'
+        verbose_name_plural = 'Tecnologías de proyectos'
+
+    def __str__(self):
+        return self.name
+    
+class ProjectTechnologyLink(models.Model):
+    project = models.ForeignKey('Project', related_name='technology_links', on_delete=models.CASCADE, verbose_name='Proyecto')
+    technology = models.ForeignKey('ProjectTechnology', related_name='project_links', on_delete=models.CASCADE, verbose_name='Tecnología')
     order = models.PositiveSmallIntegerField(default=0, verbose_name='Orden')
     created = models.DateTimeField(auto_now_add=True, verbose_name='Fecha de creado')
     modified = models.DateTimeField(auto_now=True, verbose_name='Fecha de modificado')
 
     class Meta:
         ordering = ['order']
-        verbose_name = 'Tecnología de proyecto'
-        verbose_name_plural = 'Tecnologías de proyectos'
+        unique_together = ('project', 'technology')
+        verbose_name = 'Enlace de tecnología de proyecto'
+        verbose_name_plural = 'Enlaces de tecnologías de proyectos'
 
     def __str__(self):
-        return self.name
+        return f"{self.project.title} - {self.technology.name}"
