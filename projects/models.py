@@ -2,6 +2,7 @@ from django.db import models
 from PIL import Image
 from io import BytesIO
 from django.core.files.base import ContentFile
+from ckeditor.fields import RichTextField
 import os
 
 class ProjectType(models.Model):
@@ -31,7 +32,7 @@ class ProjectRole(models.Model):
 class Project(models.Model):
     title = models.CharField(max_length=200, verbose_name='Título')
     slug = models.SlugField(max_length=200, unique=True, blank=True, verbose_name='Slug')
-    description = models.TextField(verbose_name='Descripción')
+    description = RichTextField(verbose_name='Descripción')
     short_description = models.CharField(max_length=300, verbose_name='Descripción corta')
     summary = models.CharField(max_length=200, verbose_name='Resumen')
     end_date = models.DateField(verbose_name='Fecha de finalización')

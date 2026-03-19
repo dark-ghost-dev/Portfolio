@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'adminsortable2',
+    'ckeditor',
     'core',
     'projects'
 ]
@@ -127,3 +128,34 @@ USE_TZ = True
 STATIC_URL = 'static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+#CkEditor
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': [
+            # Primera fila (limpia)
+            ['Preview', 'Templates'],
+            ['PasteText', 'PasteFromWord'],
+            ['Undo', 'Redo'],
+            ['Find', 'SelectAll'],
+
+            # Segunda fila (todo menos lo que NO quieres)
+            [
+                'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript',
+                'RemoveFormat',
+                'NumberedList', 'BulletedList',
+                'Outdent', 'Indent',
+                'Blockquote',
+                'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock',
+                'Link', 'Unlink',
+                'Image', 'Table', 'HorizontalRule', 'SpecialChar',
+                'Styles', 'Format', 'Font', 'FontSize',
+                'TextColor', 'BGColor',
+                'Maximize', 'ShowBlocks'
+            ]
+        ],
+        'height': 300,
+        'width': '100%',
+        
+    }
+}
