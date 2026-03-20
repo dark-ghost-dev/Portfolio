@@ -83,6 +83,10 @@ h1 {
     margin-bottom: 20px;
 }
 
+.carousel-indicators {
+    z-index: 1;
+}
+
 .carousel-indicators [data-bs-target] {
     width: 8px;
     height: 8px;
