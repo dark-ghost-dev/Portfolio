@@ -47,7 +47,7 @@ def validate_base_url(value):
 
 class SocialNetwork(models.Model):
     name = models.CharField(max_length=50, verbose_name='Nombre')
-    slug = models.SlugField(max_length=50, unique=True, verbose_name='Nombre en minúsculas y guión bajo')
+    slug = models.SlugField(max_length=50, unique=True, verbose_name='Slug', help_text='Se usará para el link de la red. Debe estar en minúsculas y con guión bajo.')
     base_url = models.CharField(max_length=255, validators=[validate_base_url], verbose_name='Enlace')
     created = models.DateTimeField(auto_now_add=True, verbose_name='Fecha de creado')
     modified = models.DateTimeField(auto_now=True, verbose_name='Fecha de modificado')
@@ -62,7 +62,7 @@ class SocialNetwork(models.Model):
 class SocialUser(models.Model):
     social_network = models.ForeignKey(SocialNetwork, on_delete=models.PROTECT, verbose_name='Red Social')
     username = models.CharField(max_length=50, verbose_name='Nombre de usuario')
-    profile_url = models.CharField(max_length=100, verbose_name='Path del perfil')
+    profile_url = models.CharField(max_length=100, verbose_name='Path del perfil', help_text='Se usará para el link del perfil. Debe estar en minúsculas y con guión bajo.')
     text = models.CharField(max_length=100, verbose_name='Texto')
     additional_info = models.CharField(max_length=100, blank=True, verbose_name='Información adicional')
     active = models.BooleanField(default=True, verbose_name='¿Activo?')

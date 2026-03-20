@@ -30,11 +30,11 @@ class ProjectRole(models.Model):
         return self.name
 
 class Project(models.Model):
-    title = models.CharField(max_length=200, verbose_name='Título')
-    slug = models.SlugField(max_length=200, unique=True, blank=True, verbose_name='Slug')
+    title = models.CharField(max_length=200, verbose_name='Título', help_text='Título principal')
+    slug = models.SlugField(max_length=200, unique=True, blank=True, verbose_name='Slug', help_text='Nombre que se mostrará en la URL')
     description = CKEditor5Field('Descripción', config_name='default')
-    short_description = models.CharField(max_length=300, verbose_name='Descripción corta')
-    summary = models.CharField(max_length=200, verbose_name='Resumen')
+    short_description = models.CharField(max_length=300, verbose_name='Descripción corta', help_text='Texto que se mostrará en la sección de proyectos en la pantalla principal')
+    summary = models.CharField(max_length=200, verbose_name='Resumen', help_text='Texto que se mostrará debajo del título en la visualización del proyecto')
     end_date = models.DateField(verbose_name='Fecha de finalización')
     demo_url = models.URLField(blank=True, verbose_name='URL de demo')
     repository_url = models.URLField(blank=True, verbose_name='URL del repositorio')
