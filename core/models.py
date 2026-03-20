@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.exceptions import ValidationError
+from django_ckeditor_5.fields import CKEditor5Field
 
 class SkillCategory(models.Model):
     name = models.CharField(max_length=50, unique=True, verbose_name="Categoría")
@@ -18,7 +19,7 @@ class SkillCategory(models.Model):
 
 class Skill(models.Model):
     name = models.CharField(max_length=100, verbose_name="Nombre")
-    description = models.TextField(blank=True, verbose_name="Descripción")
+    description = CKEditor5Field('Descripción', config_name='default')
     icon = models.TextField(verbose_name="Ícono", help_text="SVG del ícono")
     category = models.ForeignKey(SkillCategory, on_delete=models.PROTECT, related_name='skills', verbose_name="Categoría")
     active = models.BooleanField(default=True, verbose_name='¿Activo?')

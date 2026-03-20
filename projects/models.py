@@ -103,7 +103,7 @@ class ProjectImage(models.Model):
 class ProjectCharacteristic(models.Model):
     project = models.ForeignKey('Project', related_name='characteristics', on_delete=models.CASCADE, verbose_name='Proyecto')
     title = models.CharField(max_length=200, verbose_name='Título')
-    description = models.TextField(verbose_name='Descripción')
+    description = CKEditor5Field('Descripción', config_name='default')
     icon = models.TextField(verbose_name="Ícono", help_text="SVG del ícono")
     order = models.PositiveSmallIntegerField(default=0, verbose_name='Orden')
     created = models.DateTimeField(auto_now_add=True, verbose_name='Fecha de creado')
