@@ -1,6 +1,6 @@
 from django.db import models
-from django.core.exceptions import ValidationError
 from django_ckeditor_5.fields import CKEditor5Field
+from .validators import validate_base_url
 
 class SkillCategory(models.Model):
     name = models.CharField(max_length=50, unique=True, verbose_name="Categoría")
@@ -35,19 +35,9 @@ class Skill(models.Model):
     def __str__(self):
         return self.name
 
-def validate_base_url(value):
-    value = value.strip()
-
-    if value.startswith(('https://', 'mailto:', 'tel:')):
-        return
-
-    raise ValidationError(
-        "La URL base debe iniciar con https://, mailto: o tel:"
-    )
-
 class SocialNetwork(models.Model):
     name = models.CharField(max_length=50, verbose_name='Nombre')
-    slug = models.SlugField(max_length=50, unique=True, verbose_name='Slug', help_text='Se usará para el link de la red. Debe estar en minúsculas y con guión bajo.')
+    slug = models.SlugField(max_length=50, unique=True, verbose_name='Slug', help_text='Se usará para el icono de la red social. Debe estar en minúsculas y con guión bajo.')
     base_url = models.CharField(max_length=255, validators=[validate_base_url], verbose_name='Enlace')
     created = models.DateTimeField(auto_now_add=True, verbose_name='Fecha de creado')
     modified = models.DateTimeField(auto_now=True, verbose_name='Fecha de modificado')
