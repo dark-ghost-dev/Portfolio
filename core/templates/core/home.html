@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block meta_tags %}
-<c-head/>
+<c-head og-image="{{ request.scheme }}://{{ request.get_host }}{% static 'og.jpg' %}"/>
 {% endblock meta_tags %}
 
 {% block extra_style %}

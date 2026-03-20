@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block meta_tags %}
-<c-head title="Uziel Flores | Error 500 Internal Server Error"/>
+<c-head title="Uziel Flores | Error 500 Internal Server Error" og-image="{{ request.scheme }}://{{ request.get_host }}{% static 'og.jpg' %}"/>
 {% endblock meta_tags %}
 
 {% block extra_style %}{% endblock extra_style %}

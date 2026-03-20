@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block meta_tags %}
-<c-head title="Uziel Flores | Error 404 Not Found"/>
+<c-head title="Uziel Flores | Error 404 Not Found" og-image="{{ request.scheme }}://{{ request.get_host }}{% static 'og.jpg' %}"/>
 {% endblock meta_tags %}
 
 {% block extra_style %}{% endblock extra_style %}

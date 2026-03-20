@@ -1,7 +1,7 @@
-from django.shortcuts import render, get_object_or_404
-from django.shortcuts import redirect
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Project
 from core.models import SocialUser
+from .services.get_og_image_url import get_og_image_url
 
 def projects(request):
     return redirect('home')
@@ -11,4 +11,13 @@ def project(request, project_slug):
     projects = Project.objects.filter(active=True)
     other_projects = Project.objects.filter(active=True).exclude(id=project.id).order_by('?')
     social_users_in_hero = SocialUser.objects.filter(active=True, is_in_hero=True)
-    return render(request, 'projects/project.html', {'project': project, 'projects': projects, 'other_projects': other_projects, 'social_users_in_hero': social_users_in_hero})
+
+    context = {
+        'project': project,
+        'projects': projects,
+        'other_projects': other_projects,
+        'social_users_in_hero': social_users_in_hero,
+        'og_image_url': get_og_image_url(request, project.og_image),
+    }
+
+    return render(request, 'projects/project.html', context)

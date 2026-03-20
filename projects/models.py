@@ -1,7 +1,6 @@
 from django.db import models
 from PIL import Image
 from io import BytesIO
-from django.utils.text import slugify
 from django.core.files.base import ContentFile
 from django_ckeditor_5.fields import CKEditor5Field
 import os
@@ -44,6 +43,7 @@ class Project(models.Model):
     duration = models.IntegerField(verbose_name='Duración en meses')
     team_members = models.IntegerField(verbose_name='Número de miembros del equipo')
     og_image = models.ImageField(upload_to='og_images/', null=True, blank=True, verbose_name='Imagen Open Graph', help_text='De preferencia 1200x630 jpg')
+    og_alt = models.CharField(max_length=200, null=True, blank=True, verbose_name='Texto Open Graph', help_text='Texto alternativo de la imagen Open Graph')
     active = models.BooleanField(default=True, verbose_name='Activo')
     order = models.PositiveSmallIntegerField(default=0, verbose_name='Orden')
     created = models.DateTimeField(auto_now_add=True, verbose_name='Fecha de creado')

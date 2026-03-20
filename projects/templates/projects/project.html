@@ -7,7 +7,8 @@
     title="Uziel Flores | {{ project.title }}"
     description="{{ project.short_description }}"
     og-description="{{ project.short_description }}"
-    og-image-alt=""/>
+    og-image="{{ og_image_url }}"
+    og-image-alt="{{ project.og_alt }}"/>
 {% endblock meta_tags %}
 
 {% block extra_style %}

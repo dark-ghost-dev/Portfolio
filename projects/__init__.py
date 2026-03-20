@@ -1,1 +1,1 @@
-default_app_config = 'tu_app.apps.TuAppConfig'
+default_app_config = 'projects.apps.ProjectsConfig'
