@@ -174,7 +174,7 @@
         </button>
         <div class="skill_description collapse" id="skill_description_{{ skill.id }}">
             <div class="skill_description_content">
-                <p>{{ skill.description }}</p>
+                <p>{{ skill.description|safe }}</p>
             </div>
         </div>
         {% endfor %}
