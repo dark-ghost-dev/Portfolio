@@ -2,7 +2,7 @@ FROM python:3.11.15-alpine3.23
 
 WORKDIR /app
 
-RUN apk add --no-cache \
+RUN apk add --no-cache netcat-openbsd \
     build-base \
     mariadb-dev \
     pkgconfig

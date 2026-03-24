@@ -2,6 +2,14 @@
 
 set -e
 
+echo "Waiting for MySQL..."
+
+while ! nc -z db 3306; do
+  sleep 1
+done
+
+echo "MySQL is ready!"
+
 echo "Applying migrations..."
 python manage.py migrate --noinput
 

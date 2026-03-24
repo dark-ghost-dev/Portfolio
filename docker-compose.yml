@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8
+    container_name: db
+    restart: always
+    env_file:
+      - .env
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - portfolio
+
+  web:
+    build: .
+    container_name: web
+    ports:
+      - "8007:8000"
+    depends_on:
+      - db
+    env_file:
+      - .env
+    networks:
+      - portfolio
+
+networks:
+  portfolio:
+
+volumes:
+  mysql_data:
