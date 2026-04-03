@@ -2,6 +2,10 @@
 
 Portfolio personal de Uziel Flores — desarrollador backend y creador de contenido tecnico.
 
+<p align="center">
+    <img src="https://files.catbox.moe/ei8nms.png" alt="hero"  />
+</p>
+
 ## Proposito
 
 Este proyecto es un sitio web portfolio dinamico construido con Django 6.0.1 que muestra proyectos de software, habilidades tecnicas y presencia en redes sociales. A diferencia de un portfolio estatico, este se gestiona completamente desde el panel de administracion de Django, permitiendo agregar, editar y organizar contenido sin necesidad de tocar codigo.
