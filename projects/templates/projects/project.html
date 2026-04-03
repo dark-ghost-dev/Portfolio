@@ -85,7 +85,9 @@
     <div id="content_divider">
         <div class="content_panel">
             <h2>Sobre el proyecto</h2>
-            <p>{{ project.description|safe }}</p>
+            <div class="project_description">
+                {{ project.description|safe }}
+            </div>
             <h2>Características clave</h2>
             <div class="feature_container">
                 {% for feature in project.characteristics.all %}
